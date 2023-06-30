@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-@Aspect
 @Component
+@Aspect
 public class LoggingAspect {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
@@ -32,7 +32,7 @@ public class LoggingAspect {
 
 
     // @Before + @After
-    @Around("execution(* com.example.aop.myclass.MyClass*.myMethod(..))")
+    @Around("execution(* com.example.aop.myclass.MyClass1.myMethod(..))")
     public Object aroundAdvice(ProceedingJoinPoint joinPoint) throws Throwable {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
